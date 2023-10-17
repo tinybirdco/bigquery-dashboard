@@ -1,0 +1,17 @@
+TOKEN "most_hits_by_type_endpoint_read_2993" READ
+
+NODE endpoint
+DESCRIPTION >
+    undefined
+
+SQL >
+
+    %
+    SELECT
+      player_name,
+      sum({{column(hit_type, 'stat_hits')}}) AS total
+    FROM baseball_game_stats
+    GROUP BY player_name
+    ORDER BY total DESC
+
+

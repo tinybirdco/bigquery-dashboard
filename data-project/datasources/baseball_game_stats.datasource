@@ -1,0 +1,29 @@
+
+SCHEMA >
+    `player_name` Nullable(String),
+    `player_number` Nullable(Int64),
+    `player_team` Nullable(String),
+    `game_date` Nullable(Date32),
+    `game_time` Nullable(Int64),
+    `game_opponent` Nullable(String),
+    `game_location` Nullable(String),
+    `game_type` Nullable(String),
+    `stat_hits` Nullable(Int64),
+    `stat_rbis` Nullable(Int64),
+    `stat_at_bats` Nullable(Int64),
+    `stat_singles` Nullable(Int64),
+    `stat_doubles` Nullable(Int64),
+    `stat_triples` Nullable(Int64),
+    `stat_homeruns` Nullable(Int64),
+    `stat_sacrifice` Nullable(Int64),
+    `stat_strikeouts` Nullable(Int64)
+
+ENGINE "MergeTree"
+ENGINE_PARTITION_KEY "toYear(insertion_date)"
+ENGINE_SORTING_KEY "insertion_date"
+
+IMPORT_SERVICE 'bigquery'
+IMPORT_SCHEDULE '0 0 */1 * *'
+IMPORT_STRATEGY 'replace'
+IMPORT_QUERY 'SELECT `player_name`, `player_number`, `player_team`, `game_date`, `game_time`, `game_opponent`, `game_location`, `game_type`, `stat_hits`, `stat_rbis`, `stat_at_bats`, `stat_singles`, `stat_doubles`, `stat_triples`, `stat_homeruns`, `stat_sacrifice`, `stat_strikeouts` FROM `bigquery-dashboard-402315.baseball.game_stats`'
+IMPORT_EXTERNAL_DATASOURCE 'bigquery-dashboard-402315.baseball.game_stats'

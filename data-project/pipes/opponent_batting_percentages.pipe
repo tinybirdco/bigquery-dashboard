@@ -1,0 +1,16 @@
+TOKEN "opponent_batting_percentages_endpoint_read_3642" READ
+
+NODE endpoint
+DESCRIPTION >
+    undefined
+
+SQL >
+
+    SELECT
+      game_opponent AS team,
+      sum(stat_hits)/sum(stat_at_bats) AS batting_percentage
+    FROM baseball_game_stats
+    GROUP BY team
+    ORDER BY batting_percentage ASC
+
+

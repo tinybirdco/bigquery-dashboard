@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 :root {
+  --color-font-rgb: 0, 0, 0;
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-start-rgb: 200, 255, 200;
   --background-end-rgb: 255, 255, 255;
 }
 
@@ -13,6 +14,7 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --color-font-rgb: 255, 255, 255;
   }
 }
 
@@ -24,4 +26,26 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  height: 100svh;
+}
+
+.number-input {
+  max-width: 25px;
+}
+
+.main {
+  padding: 5rem;
+}
+
+.chart-title {
+  font-size: 1.5vw;
+  color: var(--color-font-rgb);
+}
+
+.chart-subtitle {
+  color: var(--color-font-rgb);
+}
+
+.card-title {
+  width: 75%
 }
