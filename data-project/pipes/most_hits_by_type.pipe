@@ -7,11 +7,11 @@ DESCRIPTION >
 SQL >
 
     %
-    SELECT
-      player_name,
-      sum({{column(hit_type, 'stat_hits')}}) AS total
-    FROM baseball_game_stats
-    GROUP BY player_name
-    ORDER BY total DESC
+        SELECT
+          player_name,
+          sum({{column(hit_type, 'stat_hits')}}) AS total
+        FROM baseball_game_stats
+        GROUP BY player_name
+        ORDER BY total DESC
 
 

@@ -7,12 +7,12 @@ DESCRIPTION >
 SQL >
 
     %
-    SELECT
-      game_date,
-      sum(stat_hits)/sum(stat_at_bats) AS batting_percentage
-    FROM baseball_game_stats
-    WHERE player_name = {{String(player_name, 'JAMES VAZQUEZ', required=True)}}
-    GROUP BY game_date
-    ORDER BY game_date ASC
+        SELECT
+          game_date,
+          sum(stat_hits)/sum(stat_at_bats) AS batting_percentage
+        FROM baseball_game_stats
+        WHERE player_name = {{String(player_name, 'JAMES VAZQUEZ', required=True)}}
+        GROUP BY game_date
+        ORDER BY game_date ASC
 
 
