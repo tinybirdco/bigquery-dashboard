@@ -6,11 +6,13 @@ DESCRIPTION >
 
 SQL >
 
+    %
     SELECT
-      player_team,
-      sum(stat_hits)/sum(stat_at_bats) AS batting_percentage
+      player_team AS "Team",
+      sum(stat_hits)/sum(stat_at_bats) AS "Batting Percentage"
     FROM baseball_game_stats
-    GROUP BY player_team
-    ORDER BY batting_percentage DESC
+    GROUP BY "Team"
+    ORDER BY "Batting Percentage" DESC
+    LIMIT {{UInt16(limit, 10)}}
 
 
