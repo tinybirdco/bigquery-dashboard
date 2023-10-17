@@ -6,11 +6,13 @@ DESCRIPTION >
 
 SQL >
 
+    %
     SELECT
-      game_opponent AS team,
-      sum(stat_hits)/sum(stat_at_bats) AS batting_percentage
+      game_opponent AS "Team",
+      sum(stat_hits)/sum(stat_at_bats) AS "Opponent Batting Percentage"
     FROM baseball_game_stats
-    GROUP BY team
-    ORDER BY batting_percentage ASC
+    GROUP BY "Team"
+    ORDER BY "Opponent Batting Percentage" ASC
+    LIMIT {{UInt16(limit, 10)}}
 
 
