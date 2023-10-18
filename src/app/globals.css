@@ -24,7 +24,7 @@ body {
   height: 100svh;
 }
 
-.number-input {
+.number-input, .text-input {
   max-width: 25px;
 }
 

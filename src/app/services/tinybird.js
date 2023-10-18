@@ -7,6 +7,12 @@ const teamBattingPercentagesURL = (host, token, limit) =>
 const opponentBattingPercentagesURL = (host, token, limit) =>
     `https://${host}/v0/pipes/opponent_batting_percentages.json?limit=${limit}&token=${token}`
 
+const battingPercentageOverTimeURL = (host, token, team_name) =>
+    `https://${host}/v0/pipes/batting_percentage_over_time.json?team_name=${team_name}&token=${token}`
+
+const hitsByTypeURL = (host, token, hit_type) =>
+    `https://${host}/v0/pipes/most_hits_by_type.json?hit_type=${hit_type}&token=${token}`
+
 const fetchTinybirdUrl = async (fetchUrl, setData, setLatency) => {
     const data = await fetch(fetchUrl)
     const jsonData = await data.json();
@@ -18,5 +24,7 @@ export {
     fetchTinybirdUrl,
     playerBattingPercentagesURL,
     teamBattingPercentagesURL,
-    opponentBattingPercentagesURL
+    opponentBattingPercentagesURL,
+    battingPercentageOverTimeURL,
+    hitsByTypeURL
 }

@@ -4,7 +4,9 @@ import { Subtitle, Title, Grid, Col } from '@tremor/react';
 import PlayerBattingPercentages from './components/playerBattingPercentages';
 import TeamBattingPercentages from './components/teamBattingPercentages';
 import OpponentBattingPercentages from './components/opponentBattingPercentages';
-import React, { useState, useEffect } from 'react';
+import BattingPercentageOverTime from './components/battingPercentageOverTime';
+import HitsByType from './components/hitsByType'
+import React from 'react';
 
 const TB_HOST = process.env.NEXT_PUBLIC_TINYBIRD_HOST;
 const TB_TOKEN = process.env.NEXT_PUBLIC_TINYBIRD_TOKEN; 
@@ -37,13 +39,13 @@ export default function BuildDashboard() {
           />
         </Col>
         <Col numColSpan={1} numColSpanSm={2}>
-          <PlayerBattingPercentages
+          <BattingPercentageOverTime
             host={host}
             token={token}
           />
         </Col>
         <Col numColSpan={1}>
-          <TeamBattingPercentages
+          <HitsByType
             host={host}
             token={token}
           />
