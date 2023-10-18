@@ -8,10 +8,11 @@ SQL >
 
     %
         SELECT
-          player_name,
-          sum({{column(hit_type, 'stat_hits')}}) AS total
+          player_name AS name,
+          sum({{column(hit_type, 'stat_hits')}}) AS value
         FROM baseball_game_stats
-        GROUP BY player_name
-        ORDER BY total DESC
+        GROUP BY name
+        ORDER BY value DESC
+        LIMIT 7
 
 
