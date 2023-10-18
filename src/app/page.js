@@ -1,7 +1,9 @@
 "use client";
 
-import { Card, Text, Subtitle, Title, Flex } from '@tremor/react';
+import { Subtitle, Title, Grid, Col } from '@tremor/react';
 import PlayerBattingPercentages from './components/playerBattingPercentages';
+import TeamBattingPercentages from './components/teamBattingPercentages';
+import OpponentBattingPercentages from './components/opponentBattingPercentages';
 import React, { useState, useEffect } from 'react';
 
 const TB_HOST = process.env.NEXT_PUBLIC_TINYBIRD_HOST;
@@ -12,17 +14,41 @@ export default function BuildDashboard() {
   let token = TB_TOKEN;
 
   return (
-    <div className = "main grid grid-cols-2 gap-5 sm:gap-10 grid-rows-3-auto">
-      <Flex className = "col-span-2">
-        <div>
-          <Title className = "chart-title">Real-Time Baseball Stats Dashboard</Title>
-          <Subtitle className = "chart-subtitle">Built with Tinybird, BigQuery, and Next.js</Subtitle> 
-        </div>
-      </Flex>
-      <PlayerBattingPercentages
-        host={host}
-        token={token}
-      />
-    </div>
+    <main>
+      <Title className = "chart-title">Real-Time Baseball Stats Dashboard</Title>
+      <Subtitle className = "chart-subtitle">Built with Tinybird, BigQuery, and Next.js</Subtitle> 
+      <Grid numItems={1} numItemsSm={2} numItemsLg={3} className="mt-6 gap-6">
+        <Col numColSpan={1}>
+          <PlayerBattingPercentages
+            host={host}
+            token={token}
+          />
+        </Col>
+        <Col numColSpan={1}>
+          <TeamBattingPercentages
+            host={host}
+            token={token}
+          />
+        </Col>
+        <Col numColSpan={1}>
+          <OpponentBattingPercentages
+            host={host}
+            token={token}
+          />
+        </Col>
+        <Col numColSpan={1} numColSpanSm={2}>
+          <PlayerBattingPercentages
+            host={host}
+            token={token}
+          />
+        </Col>
+        <Col numColSpan={1}>
+          <TeamBattingPercentages
+            host={host}
+            token={token}
+          />
+        </Col>
+    </Grid>
+  </main>
   );
 };

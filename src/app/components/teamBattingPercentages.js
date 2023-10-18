@@ -2,11 +2,11 @@
 
 import { Card, Title, Subtitle, BarChart, Text, NumberInput, Flex } from '@tremor/react';
 import React, { useState, useEffect } from 'react';
-import {fetchTinybirdUrl, playerBattingPercentagesURL } from '../services/tinybird.js'
+import {fetchTinybirdUrl, teamBattingPercentagesURL } from '../services/tinybird.js'
 
-const PlayerBattingPercentages = ({host, token}) => {
-    const [player_batting_percentages, setData] = useState([{
-        "Player Name": "",
+const TeamBattingPercentages = ({host, token}) => {
+    const [team_batting_percentages, setData] = useState([{
+        "Team": "",
         "Batting Percentage": 0,
     }]);
 
@@ -15,18 +15,18 @@ const PlayerBattingPercentages = ({host, token}) => {
 
     const valueFormatter = (number) => `${new Intl.NumberFormat("us").format(number).toString()}`;
 
-    let player_batting_percentages_url = playerBattingPercentagesURL(host, token, limit)
+    let team_batting_percentages_url = teamBattingPercentagesURL(host, token, limit)
 
     useEffect(() => {
-        fetchTinybirdUrl(player_batting_percentages_url, setData, setLatency)
-    }, [player_batting_percentages_url]);
+        fetchTinybirdUrl(team_batting_percentages_url, setData, setLatency)
+    }, [team_batting_percentages_url]);
 
     return (
         <Card>
             <Flex>
                 <div className="card-title">
-                    <Title>Player Batting Percentages</Title>
-                    <Subtitle>All Players</Subtitle>
+                    <Title>Team Batting Percentages</Title>
+                    <Subtitle>All Teams</Subtitle>
                 </div>
                 <div className="chart-input">
                     <Text># of Results</Text>
@@ -39,11 +39,11 @@ const PlayerBattingPercentages = ({host, token}) => {
             </Flex>
             
             <BarChart 
-                data={player_batting_percentages}
-                index="Player Name"
+                data={team_batting_percentages}
+                index="Team"
                 categories={["Batting Percentage"]} 
                 className="mt-6" 
-                colors={["blue"]}
+                colors={["green"]}
                 valueFormatter={valueFormatter}
             />
             <Text>Latency: {latency*1000} ms</Text>
@@ -51,4 +51,4 @@ const PlayerBattingPercentages = ({host, token}) => {
     );
 };
 
-export default PlayerBattingPercentages;
+export default TeamBattingPercentages;
