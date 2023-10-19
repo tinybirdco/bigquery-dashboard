@@ -96,8 +96,8 @@ Note that depending on the frequency of the Cron schedule you set in the previou
 You'll need to add some local environment variables to allow your Next.js app to read from Tinybird's APIs. Add the following to `.env.local`:
 
 ```bash
-NEXT_PUBLIC_TINYBIRD_HOST= <your workspace region host> #e.g. api.tinybird.co OR api.us-east.tinybird.co
-NEXT_PUBLIC_TINYBIRD_TOKEN= <your user admin token>
+NEXT_PUBLIC_TINYBIRD_HOST=api.tinybird.co #OR api.us-east.tinybird.co
+NEXT_PUBLIC_TINYBIRD_TOKEN=<your user admin token>
 ```
 
 ### 10. Run the app
