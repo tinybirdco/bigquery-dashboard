@@ -67,7 +67,7 @@ tb connection create bigquery
 
 Use the [included CSV file](/baseball_stats.csv) or use an existing table. Keep in mind that if you're using an existing BigQuery table, you'll need to create a new Data Source schema definition and updated your Pipes to match. That means everything from here on out will need to be customized to your unique setup.
 
-Note that if you're using your own BigQuery table, then it might be easier to create the Data Source using the [BigQuery Connector](https://www.tinybird.co/docs/ingest/bigquery.html) in the Tinybird UI.
+> Note that if you're using your own BigQuery table, then it might be easier to create the Data Source using the [BigQuery Connector](https://www.tinybird.co/docs/ingest/bigquery.html) in the Tinybird UI.
 
 ### 7. Update `baseball_game_stats.datasource` with your BigQuery details
 
@@ -87,7 +87,7 @@ cd data-project
 tb push --force
 ```
 
-Note that depending on the frequency of the Cron schedule you set in the previous step, you may need to force an initial sync with BigQuery. To do so, go to [ui.tinybird.co](https://ui.tinybird.co), find your Data Source (called `baseball_game_stats`), click the three dots in the upper right hand corner, and select "Sync Now".
+> Note that depending on the frequency of the Cron schedule you set in the previous step, you may need to force an initial sync with BigQuery. To do so, go to [ui.tinybird.co](https://ui.tinybird.co), find your Data Source (called `baseball_game_stats`), click the three dots in the upper right hand corner, and select "Sync Now".
 
 ![Force syncing a BigQuery table to Tinybird](/img/force_sync.png)
 
