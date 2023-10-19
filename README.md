@@ -77,7 +77,6 @@ If you're using the included CSV, you can leave the column definitions alone. Up
 IMPORT_SERVICE 'bigquery'
 IMPORT_SCHEDULE '0 0 */1 * *' # <- This determines how often your BigQuery table syncs to Tinybird
 IMPORT_STRATEGY 'replace'
-IMPORT_QUERY 'SELECT * FROM `<your bigquery project>.<your bigquery dataset>.<your bigquery table>`'
 IMPORT_EXTERNAL_DATASOURCE '<your bigquery project>.<your bigquery dataset>.<your bigquery table>'
 ```
 

@@ -25,5 +25,4 @@ ENGINE_SORTING_KEY "insertion_date"
 IMPORT_SERVICE 'bigquery'
 IMPORT_SCHEDULE '0 0 */1 * *'
 IMPORT_STRATEGY 'replace'
-IMPORT_QUERY 'SELECT `player_name`, `player_number`, `player_team`, `game_date`, `game_time`, `game_opponent`, `game_location`, `game_type`, `stat_hits`, `stat_rbis`, `stat_at_bats`, `stat_singles`, `stat_doubles`, `stat_triples`, `stat_homeruns`, `stat_sacrifice`, `stat_strikeouts` FROM `bigquery-dashboard-402315.baseball.game_stats`'
 IMPORT_EXTERNAL_DATASOURCE 'bigquery-dashboard-402315.baseball.game_stats'
