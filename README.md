@@ -114,7 +114,7 @@ If you find any issues or have suggestions for improvements, please submit an is
 
 ## License
 
-This code is available under the MIT license. See the [LICENSE](https://github.com/tinybirdco/bigquery-dashboard/blob/main/LICENSE) file for more details.
+This code is available under the MIT license. See the [LICENSE](https://github.com/tinybirdco/bigquery-dashboard/blob/main/LICENSE.txt) file for more details.
 
 ## Need help?
 
