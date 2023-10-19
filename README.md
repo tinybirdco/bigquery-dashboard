@@ -107,7 +107,7 @@ npm run dev
 ```
 
 Open http://localhost:3000 and you should see this:
-![real-time bigquery dashboard](/final-dashboard-screenshot.jpg)
+![real-time bigquery dashboard](img/final_dashboard_screenshot.png)
 
 ---
 
