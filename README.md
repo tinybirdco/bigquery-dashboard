@@ -107,7 +107,10 @@ npm run dev
 ```
 
 Open http://localhost:3000 and you should see this:
+
 ![real-time bigquery dashboard](img/final_dashboard_screenshot.png)
+
+Notice the latencies of the API requests. They should be very small (<5 ms depending on your network).
 
 ---
 
