@@ -87,6 +87,10 @@ cd data-project
 tb push --force
 ```
 
+Note that depending on the frequency of the Cron schedule you set in the previous step, you may need to force an initial sync with BigQuery. To do so, go to [ui.tinybird.co](https://ui.tinybird.co), find your Data Source (called `baseball_game_stats`), click the three dots in the upper right hand corner, and select "Sync Now".
+
+![Force syncing a BigQuery table to Tinybird](/img/force_sync.png)
+
 ### 9. Authorize your Next app to read from Tinybird APIs
 
 You'll need to add some local environment variables to allow your Next.js app to read from Tinybird's APIs. Add the following to `.env.local`:
